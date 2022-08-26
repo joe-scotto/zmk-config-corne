@@ -8,23 +8,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-/ {
-    behaviors {
-        td_mt: tap_dance_mod_tap {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MOD_TAP";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt LSHIFT A>, <&kp ENTER>;
-        };
-    };
-    
+/ { 
     keymap {
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                &trans  &kp Q           &kp W           &kp F         &kp P         &kp G &kp J &kp L  &kp U     &kp Y   &kp BSPC  &trans
-                &trans  &td_mt &mt_tp L CTRL R &mt_tp LALT S &mt_tp T LGUI &kp D &kp H &kp N  &kp E     &kp I   &kp O     &trans
+                &trans  &kp q           &kp W           &kp F         &kp P         &kp G &kp J &kp L  &kp U     &kp Y   &kp BSPC  &trans
+                &trans  &mt_tp LSHIFT A &mt_tp L CTRL R &mt_tp LALT S &mt_tp T LGUI &kp D &kp H &kp N  &kp E     &kp I   &kp O     &trans
                 &trans  &kp Z           &kp X           &kp C         &kp V         &kp B &kp K &kp M  &kp COMMA &kp DOT &kp SLASH &trans
                 &mo ALT &kp LGUI        &kp SPACE       &mo 1         &mo 2         &kp RCTRL
             >;
