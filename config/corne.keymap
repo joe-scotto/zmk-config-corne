@@ -10,28 +10,35 @@
 
  / {
     behaviors {
-        td_q_esc: tap_dance_0 {
+        td: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
             tapping-term-ms = <100>;
-            bindings = <&kp Q>, <&kp ESC>;
+            bindings = <&kp>, <&kp>;
         };
-        td_j_enter: tap_dance_mod_tap {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MOD_TAP";
-            #binding-cells = <0>;
-            tapping-term-ms = <100>;
-            bindings = <&kp J>, <&kp ENTER>;
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp LGUI>, <&kp SPACE>;
+    macros {
+        spotlight: spotlight {
+            label = "ZM_spotlight";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp LGUI>
+                ;
         };
     };
 
@@ -40,10 +47,10 @@
 
         default_layer {
             bindings = <
-                &trans      &td_q_esc      &kp W      &kp F      &kp F      &kp G               &td_j_enter      &kp L            &kp U      &kp Y      &kp BSPC      &trans
-                &trans      &kp A          &kp R      &kp S      &kp T      &kp D               &kp H            &kp N            &kp E      &kp I      &kp O         &trans
-                &trans      &kp Z          &kp X      &kp C      &kp V      &kp B               &kp K            &kp M            &kp COMMA  &kp DOT    &kp FSLH      &trans
-                                                      &kp LCTRL  &kp LALT   &mt LGUI SPACE      &lt 1 TAB        &lt 2 ENTER      &kp RCTRL
+                &trans      &td Q ESC        &kp W      &kp F      &kp F       &kp G               &td J ENTER      &kp L            &kp U            &kp Y      &kp BSPC            &trans
+                &trans      &kp A            &kp R      &kp S      &kp T       &kp D               &kp H            &kp N            &kp E            &kp I      &kp O               &trans
+                &trans      &hm LSHFT Z      &kp X      &kp C      &kp V       &kp B               &kp K            &kp M            &kp COMMA        &kp DOT    &hm RSHFT FSLH      &trans
+                                                      &kp LCTRL  &kp LALT      &mt LGUI SPACE      &lt 1 TAB        &lt 2 ENTER      &spotlight
                 >;
         };
 
