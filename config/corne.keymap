@@ -10,13 +10,22 @@
 
  / {
     behaviors {
-        td: tap_dance {
+        tdq: tap_dance_q_esc {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <100>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp Q>, <&kp ESC>;
         };
+
+        tdlj: tap_dance_j_enter {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&kp Q>, <&kp ENTER>;
+        };
+
 
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -43,7 +52,7 @@
 
         default_layer {
             bindings = <
-                &trans      &td Q ESC        &kp W      &kp F      &kp F       &kp G               &td J ENTER      &kp L            &kp U            &kp Y      &kp BSPC            &trans
+                &trans      &tdq        &kp W      &kp F      &kp F       &kp G               &tdj      &kp L            &kp U            &kp Y      &kp BSPC            &trans
                 &trans      &kp A            &kp R      &kp S      &kp T       &kp D               &kp H            &kp N            &kp E            &kp I      &kp O               &trans
                 &trans      &hm LSHFT Z      &kp X      &kp C      &kp V       &kp B               &kp K            &kp M            &kp COMMA        &kp DOT    &hm RSHFT FSLH      &trans
                                                       &kp LCTRL  &kp LALT      &mt LGUI SPACE      &lt 1 TAB        &lt 2 ENTER      &spotlight
