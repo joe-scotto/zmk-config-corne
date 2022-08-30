@@ -57,5 +57,14 @@
                                                         &kp LCTRL      &kp LALT      &mt LGUI SPACE      &lt 1 TAB        &lt 2 ENTER      &spotlight
             >;
         };
+
+        code_layer {
+            bindings = <
+                &trans      &kp UNDER           &kp MINUS     &kp PLUS      &kp EQUAL      &kp COLON            &trans         &kp C_PREV          &kp C_PP        &kp C_NEXT        &kp DEL             &trans
+                &trans      &kp A            &kp R      &kp S          &kp T         &kp D               &kp H            &kp N            &kp E            &kp I      &kp O               &trans
+                &trans      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B               &kp K            &kp M            &kp COMMA        &kp DOT    &mt RSHFT FSLH      &trans
+                                                        &kp LCTRL      &kp LALT      &mt LGUI SPACE      &lt 1 TAB        &lt 2 ENTER      &spotlight
+            >;
+        };
     };
  };
