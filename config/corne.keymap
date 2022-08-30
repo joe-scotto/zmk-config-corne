@@ -10,10 +10,10 @@
 
  / {
     behaviors {
-        td: tap_dance_0 {
+        td: tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0";
-            #binding-cells = <0>;
+            label = "TAP_DANCE";
+            #binding-cells = <2>;
             tapping-term-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
@@ -31,14 +31,10 @@
 
     macros {
         spotlight: spotlight {
-            label = "ZM_spotlight";
+            label = "spotlight";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_tap &kp SPACE>
-                , <&macro_release &kp LGUI>
-                ;
+            bindings = <&macro_press &kp LGUI>, <&macro_tap &kp SPACE>, <&macro_release &kp LGUI>; 
         };
     };
 
