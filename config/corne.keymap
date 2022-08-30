@@ -14,28 +14,37 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&kp Q>, <&kp ESC>;
         };
         td_j_enter: tap_dance_mod_tap {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_MOD_TAP";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             bindings = <&kp J>, <&kp ENTER>;
         };
     };
 
-    keymap {
-    compatible = "zmk,keymap";
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp LGUI>, <&kp SPACE>;
+        };
+    };
 
-    default_layer {
-        bindings = <
-            &trans      &td_q_esc   &kp W         &kp F         &kp F      &kp G   &td_j_enter   &kp L      &kp U      &kp Y    &kp BSPC  &trans
-            &trans      &kp A     &kp R         &kp S         &kp T      &kp D   &kp H   &kp N      &kp E      &kp I    &kp O     &trans
-            &trans      &kp Z     &kp X         &kp C         &kp V      &kp B   &kp K   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &trans
-            &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE   &lt 1 TAB  &lt 2 ENTER  &kp RCTRL
-            >;
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &trans      &td_q_esc      &kp W      &kp F      &kp F      &kp G               &td_j_enter      &kp L            &kp U      &kp Y      &kp BSPC      &trans
+                &trans      &kp A          &kp R      &kp S      &kp T      &kp D               &kp H            &kp N            &kp E      &kp I      &kp O         &trans
+                &trans      &kp Z          &kp X      &kp C      &kp V      &kp B               &kp K            &kp M            &kp COMMA  &kp DOT    &kp FSLH      &trans
+                                                      &kp LCTRL  &kp LALT   &mt LGUI SPACE      &lt 1 TAB        &lt 2 ENTER      &kp RCTRL
+                >;
         };
 
         code_layer {
