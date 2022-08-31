@@ -9,15 +9,13 @@
  #include <dt-bindings/zmk/bt.h>
 
 &mt {
-    tapping-term-ms = <150>;
+    tapping-term-ms = <120>;
     flavor = "tap-preferred";
-    retro-tap;
 };
 
 &lt {
-    tapping-term-ms = <150>;
+    tapping-term-ms = <120>;
     flavor = "tap-preferred";
-    retro-tap;
 };
 
  / {
