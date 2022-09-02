@@ -10,12 +10,14 @@
 
 &mt {
     tapping-term-ms = <135>;
+    quick-tap-ms = <125>;
     flavor = "tap-preferred";
 };
 
 &lt {
     tapping-term-ms = <135>;
-    flavor = "tap-preferred";
+    quick-tap-ms = <125>;
+    flavor = "hold-preferred";
 };
 
 / {
@@ -35,6 +37,16 @@
             tapping-term-ms = <135>;
             bindings = <&kp J>, <&kp ENTER>;
         };
+
+        bth: balanced_tap_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BALANCED_TAP_HOLD";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <135>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     macros {
@@ -51,28 +63,28 @@
 
         default_layer {
             bindings = <
-                &trans      &kp Q            &kp W      &kp F          &kp F         &kp G               &kp J            &kp L            &kp U            &kp Y      &kp BSPC            &trans
-                &trans      &kp A            &kp R      &kp S          &kp T         &kp D               &kp H            &kp N            &kp E            &kp I      &kp O               &trans
-                &trans      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B               &kp K            &kp M            &kp COMMA        &kp DOT    &mt RSHFT FSLH      &trans
-                                                        &kp LCTRL      &kp LALT      &mt LGUI SPACE      &lt 1 TAB        &lt 2 ENTER      &spotlight
+                &trans      &kp Q            &kp W      &kp F          &kp F         &kp G                &kp J            &kp L            &kp U            &kp Y      &kp BSPC            &trans
+                &trans      &kp A            &kp R      &kp S          &kp T         &kp D                &kp H            &kp N            &kp E            &kp I      &kp O               &trans
+                &trans      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B                &kp K            &kp M            &kp COMMA        &kp DOT    &mt RSHFT FSLH      &trans
+                                                        &kp LCTRL      &kp LALT      &bth LGUI SPACE      &lt 1 TAB        &lt 2 ENTER      &spotlight
             >;
         };
 
         code_layer {
             bindings = <
-                &trans      &kp UNDER           &kp MINUS     &kp PLUS      &kp EQUAL      &kp COLON            &kp ESC        &kp C_PREV        &kp C_PP        &kp C_NEXT        &kp DEL             &trans
-                &trans      &kp LBRC            &kp LPAR      &kp RPAR      &kp RBRC       &kp NON_US_BSLH      &kp GRAVE      &kp LEFT          &kp UP          &kp DOWN          &kp RIGHT           &trans
-                &trans      &mt LSHFT LBKT      &kp APOS      &kp DQT       &kp RBKT       &kp SEMI             &trans         &kp C_VOL_DN      &kp C_MUTE      &kp C_VOL_UP      &mt RSHFT CAPS      &trans
-                                                              &kp LCTRL     &kp LALT       &mt LGUI SPACE       &trans         &trans            &spotlight
+                &trans      &kp UNDER           &kp MINUS     &kp PLUS      &kp EQUAL      &kp COLON             &kp ESC        &kp C_PREV        &kp C_PP        &kp C_NEXT        &kp DEL             &trans
+                &trans      &kp LBRC            &kp LPAR      &kp RPAR      &kp RBRC       &kp NON_US_BSLH       &kp GRAVE      &kp LEFT          &kp UP          &kp DOWN          &kp RIGHT           &trans
+                &trans      &mt LSHFT LBKT      &kp APOS      &kp DQT       &kp RBKT       &kp SEMI              &kp ENTER      &kp C_VOL_DN      &kp C_MUTE      &kp C_VOL_UP      &mt RSHFT CAPS      &trans
+                                                              &kp LCTRL     &kp LALT       &bth LGUI SPACE       &trans         &trans            &spotlight
             >;
         };
 
         number_layer {
             bindings = <
-            &trans      &kp EXCL       &kp AT      &kp HASH      &kp DLLR      &kp PRCNT           &kp CARET      &kp AMPS      &kp ASTERISK      &kp LPAR      &kp RPAR            &trans
-            &trans      &kp N1         &kp N2      &kp N3        &kp N4        &kp N5              &kp N6         &kp N7        &kp N8            &kp N9        &kp N0              &trans
-            &trans      &kp LSHFT      &trans      &trans        &trans        &mo 3               &trans         &trans        &kp COMMA         &kp DOT       &mt RSHFT FSLH      &trans
-                                                   &kp LCTRL     &kp LALT      &mt LGUI SPACE      &trans         &trans        &spotlight
+            &trans      &kp EXCL       &kp AT      &kp HASH      &kp DLLR      &kp PRCNT            &kp CARET      &kp AMPS      &kp ASTERISK      &kp LPAR      &kp RPAR            &trans
+            &trans      &kp N1         &kp N2      &kp N3        &kp N4        &kp N5               &kp N6         &kp N7        &kp N8            &kp N9        &kp N0              &trans
+            &trans      &kp LSHFT      &trans      &trans        &trans        &mo 3                &trans         &trans        &kp COMMA         &kp DOT       &mt RSHFT FSLH      &trans
+                                                   &kp LCTRL     &kp LALT      &bth LGUI SPACE      &trans         &trans        &spotlight
             >;
         };
 
