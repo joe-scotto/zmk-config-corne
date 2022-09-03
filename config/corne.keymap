@@ -9,7 +9,7 @@
  #include <dt-bindings/zmk/bt.h>
 
 &mt {
-    tapping-term-ms = <135>;
+    tapping-term-ms = <150>;
     quick-tap-ms = <125>;
     flavor = "tap-preferred";
 };
@@ -21,34 +21,6 @@
 };
 
 / {
-    behaviors {
-        tdq: tap_dance_q_esc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE";
-            #binding-cells  = <0>;
-            tapping-term-ms = <135>;
-            bindings = <&kp Q>, <&kp ESC>;
-        };
-
-        tdj: tap_dance_j_enter {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <135>;
-            bindings = <&kp J>, <&kp ENTER>;
-        };
-
-        bth: balanced_tap_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BALANCED_TAP_HOLD";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <135>;
-            quick-tap-ms = <125>;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
     macros {
         spotlight: spotlight {
             label = "spotlight";
@@ -66,7 +38,7 @@
                 &trans      &kp Q            &kp W      &kp F          &kp P         &kp G                &kp J            &kp L            &kp U            &kp Y      &kp BSPC            &trans
                 &trans      &kp A            &kp R      &kp S          &kp T         &kp D                &kp H            &kp N            &kp E            &kp I      &kp O               &trans
                 &trans      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B                &kp K            &kp M            &kp COMMA        &kp DOT    &mt RSHFT FSLH      &trans
-                                                        &kp LCTRL      &kp LALT      &bth LGUI SPACE      &lt 1 TAB        &lt 2 ENTER      &spotlight
+                                                        &kp LCTRL      &kp LALT      &mt LGUI SPACE      &lt 1 TAB        &lt 2 ENTER      &spotlight
             >;
         };
 
