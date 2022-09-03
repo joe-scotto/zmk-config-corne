@@ -1,17 +1,18 @@
-/*
-  * Copyright (c) 2020 The ZMK Contributors
-  *
-  * SPDX-License-Identifier: MIT
-  */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+// Layers
+#define DEFAULT 0
+#define CODE 1
+#define NUM 2
+#define FUNC 3
+
+// Behavior Overrides
 &mt {
     tapping-term-ms = <135>;
     quick-tap-ms = <125>;
-    flavor = "balanced";
+    flavor = "hold-preferred";
 };
 
 &lt {
@@ -19,11 +20,6 @@
     quick-tap-ms = <125>;
     flavor = "hold-preferred";
 };
-
-#define DEFAULT 0
-#define CODE 1
-#define NUM 2
-#define FUNC 3
 
 / {
     keymap {
@@ -49,10 +45,10 @@
 
         number_layer {
             bindings = <
-            &none      &kp EXCL       &kp AT      &kp HASH       &kp DLLR      &kp PRCNT         &kp CARET      &kp AMPS      &kp ASTERISK      &none        &kp BSPC   &none
-            &none      &kp N1         &kp N2      &kp N3         &kp N4        &kp N5            &kp N6         &kp N7        &kp N8            &kp N9       &kp N0     &none
+            &none      &kp EXCL       &kp AT      &kp HASH       &kp DLLR      &kp PRCNT     &kp CARET      &kp AMPS      &kp ASTERISK      &none        &kp BSPC   &none
+            &none      &kp N1         &kp N2      &kp N3         &kp N4        &kp N5        &kp N6         &kp N7        &kp N8            &kp N9       &kp N0     &none
             &none      &kp LSHFT      &none       &none          &none         &mo FUNC      &none          &none         &kp COMMA         &kp DOT      &none      &none
-                                                  &kp LALT      &kp LGUI       &kp SPACE         &none          &none         &kp LCTRL
+                                                  &kp LALT      &kp LGUI       &kp SPACE     &none          &none         &kp LCTRL
             >;
         };
 
