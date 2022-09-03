@@ -30,6 +30,13 @@
             #binding-cells = <0>;
             bindings = <&macro_press &kp LGUI>, <&macro_tap &kp SPACE>, <&macro_release &kp LGUI>; 
         };
+
+        emoji: emoji {
+            label = "emoji";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>, <&macro_press &kp LCTRL>, <&macro_tap &kp SPACE>, <&macro_release &kp LCTRL>, <&macro_release &kp LGUI>; 
+        };
     };
 
     behaviors {
@@ -38,7 +45,7 @@
             label = "TAP_DANCE_LCTRL_SPOTLIGHT";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LCTRL>, <&spotlight>;
+            bindings = <&kp LCTRL>, <&spotlight>, <&emoji>;
         };
     };
 
