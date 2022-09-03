@@ -32,18 +32,18 @@
             bindings = <&macro_press &kp LGUI>, <&macro_tap &kp SPACE>, <&macro_release &kp LGUI>; 
         };
 
-        emoji: emoji {
-            label = "emoji";
+        mac_emoji: mac_emoji {
+            label = "mac_emoji";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_press &kp LGUI>, <&macro_press &kp LCTRL>, <&macro_tap &kp SPACE>, <&macro_release &kp LCTRL>, <&macro_release &kp LGUI>; 
         };
 
-        windows_search: windows_search {
-            label = "windows_search";
+        win_emoji: win_emoji {
+            label = "win_emoji";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp S>, <&macro_release &kp LCTRL>; 
+            bindings = <&macro_press &kp LGUI>, <&macro_tap &kp DOT>, <&macro_release &kp LGUI>; 
         };
     };
 
@@ -53,7 +53,7 @@
             label = "TAP_DANCE_MULTI_MAC";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp LCTRL>, <&kp ESC>, <&spotlight>, <&emoji>;
+            bindings = <&kp LCTRL>, <&kp ESC>, <&spotlight>, <&mac_emoji>;
         };
 
         td_multi_windows: tap_dance_multi_windows {
@@ -61,7 +61,7 @@
             label = "TAP_DANCE_MULTI_WINDOWS";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp LGUI>, <&kp ESC>, <&windows_search>;
+            bindings = <&kp LGUI>, <&kp ESC>, <&LGUI> <&win_emoji>;
         };
     };
 
@@ -91,16 +91,16 @@
                 &none      &kp EXCL       &kp AT      &kp HASH       &kp DLLR      &kp PRCNT         &kp CARET      &kp AMPS      &kp ASTERISK      &kp CAPS      &kp BSPC      &none
                 &none      &kp N1         &kp N2      &kp N3         &kp N4        &kp N5            &kp N6         &kp N7        &kp N8            &kp N9        &kp N0        &none
                 &none      &kp LSHFT      &none       &none          &none         &mo MAC_FUNC      &to WIN        &none         &kp COMMA         &kp DOT       &none         &none
-                                                    &kp LALT      &kp LGUI       &kp SPACE         &none          &none         &td_multi_mac
+                                                      &kp LALT      &kp LGUI       &kp SPACE         &none          &none         &td_multi_mac
             >;
         };
 
         mac_function_layer {
             bindings =<
-                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &none        &none        &none       &none       &none        &none
-                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5            &kp 6        &kp F7       &kp F8      &kp F9      &kp F10      &none
-                &none      &kp F11         &none             &none             &bootloader       &none             &none        &none        &none       &none       &kp F12      &none
-                                                             &kp LALT          &kp LGUI          &kp SPACE         &none        &none        &td_multi_mac
+                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &none      &none        &none       &none       &none        &none
+                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5            &kp 6      &kp F7       &kp F8      &kp F9      &kp F10      &none
+                &none      &kp F11         &none             &none             &bootloader       &none             &none      &none        &none       &none       &kp F12      &none
+                                                             &kp LALT          &kp LGUI          &kp SPACE         &none      &none        &td_multi_mac
             >;
         };
 
@@ -131,12 +131,12 @@
             >;
         };
 
-        function_layer_mac {
+        windows_function_layer {
             bindings =<
-                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &none        &none        &none       &none       &none        &none
-                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5            &kp 6        &kp F7       &kp F8      &kp F9      &kp F10      &none
-                &none      &kp F11         &none             &none             &bootloader       &none             &none        &none        &none       &none       &kp F12      &none
-                                                             &kp LALT          &kp LCTRL          &kp SPACE        &none        &none        &td_multi_windows
+                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &none      &none        &none       &none       &none        &none
+                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5            &kp 6      &kp F7       &kp F8      &kp F9      &kp F10      &none
+                &none      &kp F11         &none             &none             &bootloader       &none             &none      &none        &none       &none       &kp F12      &none
+                                                             &kp LALT          &kp LCTRL         &kp SPACE         &none      &none        &td_multi_windows
             >;
         };
     };
