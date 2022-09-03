@@ -72,7 +72,7 @@
                 &none      &kp Q            &kp W      &kp F          &kp P          &kp G          &kp J             &kp L              &kp U            &kp Y      &kp BSPC            &none
                 &none      &kp A            &kp R      &kp S          &kp T          &kp D          &kp H             &kp N              &kp E            &kp I      &kp O               &none
                 &none      &mt LSHFT Z      &kp X      &kp C          &kp V          &kp B          &kp K             &kp M              &kp COMMA        &kp DOT    &mt RSHFT FSLH      &none
-                                                       &kp LALT       &kp LCTRL      &kp SPACE      &lt CODE TAB      &lt NUM ENTER      &kp LGUI
+                                                       &kp LALT       &kp LCTRL      &kp SPACE      &lt WIN_CODE TAB      &lt WIN_NUM ENTER      &kp LGUI
             >;
         };
 
