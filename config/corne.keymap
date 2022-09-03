@@ -13,29 +13,29 @@
 
 // Behavior Overrides
 &mt {
-    tapping-term-ms = <135>;
+    tapping-term-ms = <150>;
     quick-tap-ms = <125>;
     flavor = "hold-preferred";
 };
 
 &lt {
-    tapping-term-ms = <135>;
+    tapping-term-ms = <150>;
     quick-tap-ms = <125>;
     flavor = "hold-preferred";
 };
 
 / {
-    behaviors {
-        td_mytd: tap_dance_my {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_MY";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings =
-            <&lt CODE TAB>,
-            <&kp ENTER>;
-        };
-    };
+    // behaviors {
+    //     td_mytd: tap_dance_my {
+    //         compatible = "zmk,behavior-tap-dance";
+    //         label = "TAP_DANCE_MY";
+    //         #binding-cells = <0>;
+    //         tapping-term-ms = <135>;
+    //         quick-tap-ms = <125>;
+
+    //         bindings = <&lt CODE TAB>, <&kp ENTER>;
+    //     };
+    // };
 
     keymap {
         compatible = "zmk,keymap";
@@ -45,7 +45,7 @@
                 &none      &kp Q            &kp W      &kp F          &kp P         &kp G          &kp J             &kp L              &kp U            &kp Y      &kp BSPC            &none
                 &none      &kp A            &kp R      &kp S          &kp T         &kp D          &kp H             &kp N              &kp E            &kp I      &kp O               &none
                 &none      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B          &kp K             &kp M              &kp COMMA        &kp DOT    &mt RSHFT FSLH      &none
-                                                       &kp LALT       &kp LGUI      &kp SPACE      &lt CODE TAB      &lt NUM ENTER      &td_mytd
+                                                       &kp LALT       &kp LGUI      &kp SPACE      &lt CODE TAB      &lt NUM ENTER      &kp LCTRL
             >;
         };
 
