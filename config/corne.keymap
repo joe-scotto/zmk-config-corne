@@ -61,7 +61,7 @@
             label = "TAP_DANCE_MULTI_WINDOWS";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp LGUI>, <&kp ESC>, <&LGUI>, <&win_emoji>;
+            bindings = <&kp LGUI>, <&kp ESC>, <&kp LGUI>, <&win_emoji>;
         };
     };
 
