@@ -55,7 +55,7 @@
             label = "TAP_DANCE_MULTI_MAC";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&spotlight>, <&mac_emoji>;
+            bindings = <&kp ESC>, <&spotlight>, <&mac_emoji>;
         };
 
         td_multi_windows: tap_dance_multi_windows {
@@ -63,23 +63,7 @@
             label = "TAP_DANCE_MULTI_WINDOWS";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp LGUI>, <&win_emoji>;
-        };
-
-        lt_mac_code: lt_mac_code {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_TAP_MAC_CODE";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&lt MAC_CODE TAB>, <&kp ENTER>;
-        };
-
-        lt_win_code: lt_win_code {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_TAP_WIN_CODE";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&lt WIN_CODE TAB>, <&kp ENTER>;
+            bindings = <&kp ESC>, <&kp LGUI>, <&win_emoji>;
         };
 
         // Space Mod
@@ -112,10 +96,10 @@
 
         mac_default_layer {
             bindings = <
-                &none      &kp Q            &kp W      &kp F          &kp P         &kp G                     &kp J             &kp L                &kp U              &kp Y        &kp BSPC            &none
-                &none      &kp A            &kp R      &kp S          &kp T         &kp D                     &kp H             &kp N                &kp E              &kp I        &kp O               &none
-                &none      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B                     &kp K             &kp M                &kp COMMA          &kp DOT      &mt RSHFT FSLH      &none
-                                                       &kp LCTRL      &kp LALT      &ht_space LGUI SPACE      &lt_mac_code      &lt MAC_NUM ESC      &td_multi_mac      
+                &none      &kp Q            &kp W      &kp F          &kp P         &kp G                     &kp J                   &kp L                &kp U              &kp Y        &kp BSPC            &none
+                &none      &kp A            &kp R      &kp S          &kp T         &kp D                     &kp H                   &kp N                &kp E              &kp I        &kp O               &none
+                &none      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B                     &kp K                   &kp M                &kp COMMA          &kp DOT      &mt RSHFT FSLH      &none
+                                                       &kp LCTRL      &kp LALT      &ht_space LGUI SPACE      &lt MAC_CODE ENTER      &lt MAC_NUM TAB      &td_multi_mac      
             >;
         };
 
@@ -148,10 +132,10 @@
 
         windows_defualt_layer {
             bindings = <
-                &none      &kp Q            &kp W      &kp F          &kp P         &kp G                      &kp J             &kp L                &kp U                  &kp Y        &kp BSPC            &none
-                &none      &kp A            &kp R      &kp S          &kp T         &kp D                      &kp H             &kp N                &kp E                  &kp I        &kp O               &none
-                &none      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B                      &kp K             &kp M                &kp COMMA              &kp DOT      &mt RSHFT FSLH      &none
-                                                       &kp LGUI       &kp LALT      &ht_space LCTRL SPACE      &lt_win_code      &lt WIN_NUM ESC      &td_multi_windows      
+                &none      &kp Q            &kp W      &kp F          &kp P         &kp G                      &kp J                   &kp L                &kp U                  &kp Y        &kp BSPC            &none
+                &none      &kp A            &kp R      &kp S          &kp T         &kp D                      &kp H                   &kp N                &kp E                  &kp I        &kp O               &none
+                &none      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B                      &kp K                   &kp M                &kp COMMA              &kp DOT      &mt RSHFT FSLH      &none
+                                                       &kp LGUI       &kp LALT      &ht_space LCTRL SPACE      &lt WIN_CODE ENTER      &lt WIN_NUM TAB      &td_multi_windows      
             >;
         };
 
