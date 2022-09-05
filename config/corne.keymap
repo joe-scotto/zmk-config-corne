@@ -15,7 +15,7 @@
 // Behavior Overrides
 &mt {
     tapping-term-ms = <200>;
-    flavor = "hold-preferred";
+    flavor = "balanced";
 };
 
 &lt {
@@ -97,10 +97,10 @@
 
         mac_function_layer {
             bindings =<
-                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &none      &none        &none       &none       &none        &none
-                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5            &kp 6      &kp F7       &kp F8      &kp F9      &kp F10      &none
-                &none      &kp F11         &none             &none             &bootloader       &none             &none      &none        &none       &none       &kp F12      &none
-                                                             &kp LALT          &kp LGUI          &kp SPACE         &none      &none        &td_multi_mac
+                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &none      &none       &none       &none       &none        &none
+                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5            &kp 6      &kp F7      &kp F8      &kp F9      &kp F10      &none
+                &none      &kp F11         &none             &none             &bootloader       &none             &none      &none       &none       &none       &kp F12      &none
+                                                             &kp LALT          &kp LGUI          &kp SPACE         &none      &none       &td_multi_mac
             >;
         };
 
@@ -133,10 +133,10 @@
 
         windows_function_layer {
             bindings =<
-                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &none            &none        &none       &none       &none        &none
-                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5            &kp 6            &kp F7       &kp F8      &kp F9      &kp F10      &none
-                &none      &kp F11         &none             &none             &bootloader       &none             &bootloader      &none        &none       &none       &kp F12      &none
-                                                             &kp LALT          &kp LCTRL         &kp SPACE         &none            &none        &td_multi_windows
+                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &none      &none       &none       &none       &none        &none
+                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5            &kp 6      &kp F7      &kp F8      &kp F9      &kp F10      &none
+                &none      &kp F11         &none             &none             &bootloader       &none             &none      &none       &none       &none       &kp F12      &none
+                                                             &kp LALT          &kp LCTRL         &kp SPACE         &none      &none       &td_multi_windows
             >;
         };
     };
