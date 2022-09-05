@@ -30,7 +30,7 @@
             label = "spotlight";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LGUI>, <&macro_tap &kp SPACE>, <&macro_release &kp LGUI>; 
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp SPACE>, <&macro_release &kp LALT>; 
         };
 
         // Emoji
