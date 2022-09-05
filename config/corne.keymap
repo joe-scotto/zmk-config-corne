@@ -65,12 +65,12 @@
             bindings = <&kp ESC>, <&kp LGUI>, <&win_emoji>;
         };
 
-        ht_space: hold_tap_space {
+        ht_space: hold_tap_space {   
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_SPACE";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <125>;
             retro-tap;
             global-quick-tap;
