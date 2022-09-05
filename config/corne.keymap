@@ -84,10 +84,10 @@
 
         mac_default_layer {
             bindings = <
-                &none      &kp Q            &kp W      &kp F          &kp P         &kp G                     &kp J                 &kp L                  &kp U              &kp Y        &kp BSPC            &none
-                &none      &kp A            &kp R      &kp S          &kp T         &kp D                     &kp H                 &kp N                  &kp E              &kp I        &kp O               &none
-                &none      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B                     &kp K                 &kp M                  &kp COMMA          &kp DOT      &mt RSHFT FSLH      &none
-                                                       &kp LCTRL      &kp LALT      &ht_space LGUI SPACE      &lt MAC_CODE TAB      &lt MAC_NUM ENTER      &td_multi_mac      
+                &none      &kp Q            &kp W      &kp F          &kp P         &kp G                     &kp J                   &kp L                &kp U              &kp Y        &kp BSPC            &none
+                &none      &kp A            &kp R      &kp S          &kp T         &kp D                     &kp H                   &kp N                &kp E              &kp I        &kp O               &none
+                &none      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B                     &kp K                   &kp M                &kp COMMA          &kp DOT      &mt RSHFT FSLH      &none
+                                                       &kp LCTRL      &kp LALT      &ht_space LGUI SPACE      &lt MAC_CODE ENTER      &lt MAC_NUM TAB      &td_multi_mac      
             >;
         };
 
@@ -120,10 +120,10 @@
 
         windows_defualt_layer {
             bindings = <
-                &none      &kp Q            &kp W      &kp F          &kp P         &kp G                      &kp J                 &kp L                  &kp U                  &kp Y        &kp BSPC            &none
-                &none      &kp A            &kp R      &kp S          &kp T         &kp D                      &kp H                 &kp N                  &kp E                  &kp I        &kp O               &none
-                &none      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B                      &kp K                 &kp M                  &kp COMMA              &kp DOT      &mt RSHFT FSLH      &none
-                                                       &kp LGUI       &kp LALT      &ht_space LCTRL SPACE      &lt WIN_CODE TAB      &lt WIN_NUM ENTER      &td_multi_windows      
+                &none      &kp Q            &kp W      &kp F          &kp P         &kp G                      &kp J                   &kp L                &kp U                  &kp Y        &kp BSPC            &none
+                &none      &kp A            &kp R      &kp S          &kp T         &kp D                      &kp H                   &kp N                &kp E                  &kp I        &kp O               &none
+                &none      &mt LSHFT Z      &kp X      &kp C          &kp V         &kp B                      &kp K                   &kp M                &kp COMMA              &kp DOT      &mt RSHFT FSLH      &none
+                                                       &kp LGUI       &kp LALT      &ht_space LCTRL SPACE      &lt WIN_CODE ENTER      &lt WIN_NUM TAB      &td_multi_windows      
             >;
         };
 
