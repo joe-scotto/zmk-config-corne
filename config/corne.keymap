@@ -35,7 +35,7 @@
 
         mac_emoji: mac_emoji {
             label = "mac_emoji";
-            compatible = "zmk,behavior-macro";This is a test to see Hof
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_press &kp LGUI>, <&macro_press &kp LCTRL>, <&macro_tap &kp SPACE>, <&macro_release &kp LCTRL>, <&macro_release &kp LGUI>; 
         };
