@@ -122,9 +122,9 @@
 
         mac_gaming_layer {
             bindings = <
-                &none      &kp Q            &kp W      &kp F         &kp P         &kp G          &kp J        &kp L                           &kp U              &kp Y        &kp BSPC            &none
-                &none      &kp A            &kp R      &kp S         &kp T         &kp D          &kp H        &kp N                           &kp E              &kp I        &kp O               &none
-                &none      &mt LSHFT Z      &kp X      &kp C         &kp V         &kp B          &kp K        &kp M                           &kp COMMA          &kp DOT      &mt RSHFT FSLH      &none
+                &none      &kp Q            &kp W      &kp F         &kp P         &kp G          &kp J        &kp L        &kp U              &kp Y        &kp BSPC            &none
+                &none      &kp A            &kp R      &kp S         &kp T         &kp D          &kp H        &kp N        &kp E              &kp I        &kp O               &none
+                &none      &mt LSHFT Z      &kp X      &kp C         &kp V         &kp B          &kp K        &kp M        &kp COMMA          &kp DOT      &mt RSHFT FSLH      &none
                                                        &kp LALT      &kp LGUI      &kp SPACE      &kp TAB      &to MAC      &td_multi_mac      
             >;p
         };
@@ -167,9 +167,9 @@
 
         windows_gaming_layer {
             bindings = <
-                &none      &kp Q            &kp W      &kp F         &kp P          &kp G          &kp J        &kp L                               &kp U                  &kp Y        &kp BSPC            &none
-                &none      &kp A            &kp R      &kp S         &kp T          &kp D          &kp H        &kp N                               &kp E                  &kp I        &kp O               &none
-                &none      &mt LSHFT Z      &kp X      &kp C         &kp V          &kp B          &kp K        &kp M                               &kp COMMA              &kp DOT      &mt RSHFT FSLH      &none
+                &none      &kp Q            &kp W      &kp F         &kp P          &kp G          &kp J        &kp L        &kp U                  &kp Y        &kp BSPC            &none
+                &none      &kp A            &kp R      &kp S         &kp T          &kp D          &kp H        &kp N        &kp E                  &kp I        &kp O               &none
+                &none      &mt LSHFT Z      &kp X      &kp C         &kp V          &kp B          &kp K        &kp M        &kp COMMA              &kp DOT      &mt RSHFT FSLH      &none
                                                        &kp LALT      &kp LCTRL      &kp SPACE      &kp TAB      &to WIN      &td_multi_windows      
             >;
         };
