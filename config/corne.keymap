@@ -6,13 +6,13 @@
 #define MAC 0
 #define MAC_CODE 1
 #define MAC_NUM 2
-#define MAC_FUNC 3
-#define MAC_GAME 4
+#define MAC_GAME 3
+#define MAC_FUNC 4
 #define WIN 5
 #define WIN_CODE 6
 #define WIN_NUM 7
-#define WIN_FUNC 8
-#define WIN_GAME 9
+#define WIN_GAME 8
+#define WIN_FUNC 9
 
 // Behavior Overrides
 &mt {
@@ -111,6 +111,15 @@
             >;
         };
 
+        mac_gaming_layer {
+            bindings = <
+                &none      &kp Q      &kp W      &kp F         &kp P         &kp G          &kp J        &kp L        &kp U              &kp Y        &kp BSPC      &none
+                &none      &kp A      &kp R      &kp S         &kp T         &kp D          &kp H        &kp N        &kp E              &kp I        &kp O         &none
+                &none      &kp Z      &kp X      &kp C         &kp V         &kp B          &kp K        &kp M        &kp COMMA          &kp DOT      &kp FSLH      &none
+                                                 &kp LALT      &kp LGUI      &kp SPACE      &kp TAB      &to MAC      &td_multi_mac      
+            >;
+        };
+
         mac_function_layer {
             bindings =<
                 &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3              &none      &none       &none              &to WIN      &to MAC_GAME      &none
@@ -118,15 +127,6 @@
                 &none      &kp F11         &none             &none             &bootloader       &none                     &none      &none       &none              &none        &kp F12           &none
                                                              &kp LCTRL         &kp LALT          &ht_space LGUI SPACE      &none      &none       &td_multi_mac      
             >;
-        };
-
-        mac_gaming_layer {
-            bindings = <
-                &none      &kp Q            &kp W      &kp F         &kp P         &kp G          &kp J        &kp L        &kp U              &kp Y        &kp BSPC            &none
-                &none      &kp A            &kp R      &kp S         &kp T         &kp D          &kp H        &kp N        &kp E              &kp I        &kp O               &none
-                &none      &mt LSHFT Z      &kp X      &kp C         &kp V         &kp B          &kp K        &kp M        &kp COMMA          &kp DOT      &mt RSHFT FSLH      &none
-                                                       &kp LALT      &kp LGUI      &kp SPACE      &kp TAB      &to MAC      &td_multi_mac      
-            >;p
         };
 
         windows_default_layer {
@@ -156,21 +156,21 @@
             >;
         };
 
+        windows_gaming_layer {
+            bindings = <
+                &none      &kp Q      &kp W      &kp F         &kp P          &kp G          &kp J        &kp L        &kp U                  &kp Y        &kp BSPC      &none
+                &none      &kp A      &kp R      &kp S         &kp T          &kp D          &kp H        &kp N        &kp E                  &kp I        &kp O         &none
+                &none      &kp Z      &kp X      &kp C         &kp V          &kp B          &kp K        &kp M        &kp COMMA              &kp DOT      &kp FSLH      &none
+                                                 &kp LALT      &kp LCTRL      &kp SPACE      &kp TAB      &to WIN      &td_multi_windows      
+            >;
+        };
+
         windows_function_layer {
             bindings =<
                 &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3               &none      &none       &none                  &to MAC      &to WIN_GAME      &none
                 &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5                     &kp 6      &kp F7      &kp F8                 &kp F9       &kp F10           &none
                 &none      &kp F11         &none             &none             &bootloader       &none                      &none      &none       &none                  &none        &kp F12           &none
                                                              &kp LGUI          &kp LALT          &ht_space LCTRL SPACE      &none      &none       &td_multi_windows      
-            >;
-        };
-
-        windows_gaming_layer {
-            bindings = <
-                &none      &kp Q            &kp W      &kp F         &kp P          &kp G          &kp J        &kp L        &kp U                  &kp Y        &kp BSPC            &none
-                &none      &kp A            &kp R      &kp S         &kp T          &kp D          &kp H        &kp N        &kp E                  &kp I        &kp O               &none
-                &none      &mt LSHFT Z      &kp X      &kp C         &kp V          &kp B          &kp K        &kp M        &kp COMMA              &kp DOT      &mt RSHFT FSLH      &none
-                                                       &kp LALT      &kp LCTRL      &kp SPACE      &kp TAB      &to WIN      &td_multi_windows      
             >;
         };
     };
