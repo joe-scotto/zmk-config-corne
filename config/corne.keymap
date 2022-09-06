@@ -17,8 +17,8 @@
 // Behavior Overrides
 &mt {
     tapping-term-ms = <200>;
-    flavor = "tap-unless-interrupted";
-    quick-tap-ms = <150>; 
+    flavor = "tap-preferred";
+    // quick-tap-ms = <150>; 
 };
 
 &lt {
@@ -66,6 +66,22 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp ESC>, <&kp LGUI>, <&win_emoji>;
+        };
+
+        td_to_mac: tap_dance_to_mac {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_TO_MAC";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&to WIN>, <&to MAC_GAME>;
+        };
+
+        td_to_win: tap_dance_to_win {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_TO_WIN";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&to MAC>, <&to WIN_GAME>;
         };
 
         // Space Mod
@@ -122,9 +138,9 @@
 
         mac_function_layer {
             bindings =<
-                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3              &none      &none       &none              &to WIN      &to MAC_GAME      &none
-                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5                    &kp 6      &kp F7      &kp F8             &kp F9       &kp F10           &none
-                &none      &kp F11         &none             &none             &bootloader       &none                     &none      &none       &none              &none        &kp F12           &none
+                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3              &none      &none       &none              &none       &td_to_win      &none
+                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5                    &kp 6      &kp F7      &kp F8             &kp F9      &kp F10         &none
+                &none      &kp F11         &none             &none             &bootloader       &none                     &none      &none       &none              &none       &kp F12         &none
                                                              &kp LCTRL         &kp LALT          &ht_space LGUI SPACE      &none      &none       &td_multi_mac      
             >;
         };
@@ -167,9 +183,9 @@
 
         windows_function_layer {
             bindings =<
-                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3               &none      &none       &none                  &to MAC      &to WIN_GAME      &none
-                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5                     &kp 6      &kp F7      &kp F8                 &kp F9       &kp F10           &none
-                &none      &kp F11         &none             &none             &bootloader       &none                      &none      &none       &none                  &none        &kp F12           &none
+                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3               &none      &none       &none                  &none      &td_to_mac      &none
+                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5                     &kp 6      &kp F7      &kp F8                 &kp F9     &kp F10         &none
+                &none      &kp F11         &none             &none             &bootloader       &none                      &none      &none       &none                  &none      &kp F12         &none
                                                              &kp LGUI          &kp LALT          &ht_space LCTRL SPACE      &none      &none       &td_multi_windows      
             >;
         };
