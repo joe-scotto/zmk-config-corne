@@ -68,6 +68,7 @@
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
+            retro-tap;
         };
 
         cm: coderow_mods {
@@ -78,6 +79,7 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+            retro-tap;
         };
 
         sm: space_mod {
