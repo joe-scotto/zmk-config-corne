@@ -19,6 +19,27 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_tab {
+            timeout-ms = <20>;
+            key-positions = <1 2>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_enter {
+            timeout-ms = <20>;
+            key-positions = <12 13>;
+            bindings = <&kp ENTER>;
+        };
+    };
+
     macros {
         spotlight: spotlight {
             label = "spotlight";
