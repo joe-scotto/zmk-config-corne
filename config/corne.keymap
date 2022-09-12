@@ -21,12 +21,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp TAB>;
-        };
-
+        
         combo_tab {
             timeout-ms = <20>;
             key-positions = <1 2>;
@@ -35,7 +30,7 @@
 
         combo_enter {
             timeout-ms = <20>;
-            key-positions = <12 13>;
+            key-positions = <13 14>;
             bindings = <&kp ENTER>;
         };
     };
@@ -85,11 +80,10 @@
             compatible = "zmk,behavior-hold-tap";
             label = "BOTTOM_ROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <125>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
-            retro-tap;
         };
 
         cm: code_row_mods {
