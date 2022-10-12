@@ -19,21 +19,21 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
+    //combos {
+      //  compatible = "zmk,combos";
         
-        combo_tab {
-            timeout-ms = <20>;
-            key-positions = <1 2>;
-            bindings = <&kp TAB>;
-        };
+        //combo_tab {
+        //  timeout-ms = <20>;
+        //  key-positions = <1 2>;
+        //  bindings = <&kp TAB>;
+        //};
 
-        combo_enter {
-            timeout-ms = <20>;
-            key-positions = <13 14>;
-            bindings = <&kp ENTER>;
-        };
-    };
+      //  combo_enter {
+        //    timeout-ms = <20>;
+          //  key-positions = <13 14>;
+            //bindings = <&kp ENTER>;
+        //};
+    //};
 
     macros {
         spotlight: spotlight {
