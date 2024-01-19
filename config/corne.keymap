@@ -3,14 +3,14 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Layers
-#define MAC 0
-#define MAC_CODE 1
-#define MAC_NUM 2
-#define MAC_FUNC 3
-#define WIN 4
-#define WIN_CODE 5
-#define WIN_NUM 6
-#define WIN_FUNC 7
+#define MAC 4
+#define MAC_CODE 5
+#define MAC_NUM 6
+#define MAC_FUNC 7
+#define WIN 0
+#define WIN_CODE 1
+#define WIN_NUM 2
+#define WIN_FUNC 3
 
 // Behavior Overrides
 &lt {
@@ -111,6 +111,42 @@
     keymap {
         compatible = "zmk,keymap";
 
+        windows_default_layer {
+            bindings = <
+                &none      &kp Q            &kp W      &kp F          &kp P         &kp G                &kp J                 &kp L                  &kp U                  &kp Y        &kp BSPC            &none
+                &none      &kp A            &kp R      &kp S          &kp T         &kp D                &kp H                 &kp N                  &kp E                  &kp I        &kp O               &none
+                &none      &bm LSHFT Z      &kp X      &kp C          &kp V         &kp B                &kp K                 &kp M                  &kp COMMA              &kp DOT      &bm RSHFT FSLH      &none
+                                                       &kp LGUI       &kp LALT      &sm LCTRL SPACE      &lt WIN_CODE TAB      &lt WIN_NUM ENTER      &td_multi_windows
+            >;
+        };
+
+        windows_code_layer {
+            bindings = <
+                &none      &kp UNDER           &kp MINUS     &kp PLUS      &kp EQUAL      &kp COLON      &kp GRAVE      &kp C_PREV        &kp C_PP               &kp C_NEXT        &kp DEL             &none
+                &none      &kp LBRC            &kp LPAR      &kp RPAR      &kp RBRC       &kp PIPE       &kp ESC        &kp LEFT          &kp UP                 &kp DOWN          &kp RIGHT           &none
+                &none      &cm LSHFT LBKT      &kp APOS      &kp DQT       &kp RBKT       &kp SEMI       &kp TILDE      &kp C_VOL_DN      &kp C_MUTE             &kp C_VOL_UP      &cm RSHFT BSLH      &none
+                                                             &trans        &trans         &trans         &trans         &trans            &trans
+            >;
+        };
+
+        windows_number_layer {
+            bindings = < 
+                &none      &kp EXCL       &kp AT      &kp HASH      &kp DLLR       &kp PRCNT         &kp CARET      &kp AMPS      &kp ASTERISK           &kp CAPS      &kp BSPC       &none  
+                &none      &kp N1         &kp N2      &kp N3        &kp N4         &kp N5            &kp N6         &kp N7        &kp N8                 &kp N9        &kp N0         &none
+                &none      &kp LSHFT      &none       &none         &none          &mo WIN_FUNC      &none          &none         &kp COMMA              &kp DOT       &kp RSHFT      &none
+                                                      &trans        &trans         &trans            &trans         &trans        &trans
+            >;
+        };
+
+        windows_function_layer {
+            bindings =<
+                &none      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2        &bt BT_SEL 3      &bt BT_SEL 4      &none      &none       &none                  &none       &to MAC      &none
+                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5            &kp 6      &kp F7      &kp F8                 &kp F9      &kp F10      &none
+                &none      &kp F11         &none             &bt BT_CLR        &bootloader       &none             &none      &none       &none                  &none       &kp F12      &none
+                                                             &trans            &trans            &trans            &trans     &trans      &trans      
+            >;
+        };
+
         mac_default_layer {
             bindings = <
                 &none      &kp Q            &kp W      &kp F          &kp P         &kp G               &kp J                 &kp L                  &kp U              &kp Y        &kp BSPC            &none
@@ -140,46 +176,10 @@
 
         mac_function_layer {
             bindings =<
-                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3        &none      &none       &none              &none       &to WIN      &none
+                &none      &bt BT_SEL 0    &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &bt BT_SEL 4        &none      &none       &none              &none       &to WIN      &none
                 &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5              &kp 6      &kp F7      &kp F8             &kp F9      &kp F10      &none
-                &none      &kp F11         &none             &none             &bootloader       &none               &none      &none       &none              &none       &kp F12      &none
+                &none      &kp F11         &none             &bt BT_CLR        &bootloader       &none               &none      &none       &none              &none       &kp F12      &none
                                                              &kp LCTRL         &kp LALT          &sm LGUI SPACE      &none      &none       &td_multi_mac      
-            >;
-        };
-
-        windows_default_layer {
-            bindings = <
-                &none      &kp Q            &kp W      &kp F          &kp P          &kp G          &kp J                 &kp L                  &kp U                  &kp Y        &kp BSPC            &none
-                &none      &kp A            &kp R      &kp S          &kp T          &kp D          &kp H                 &kp N                  &kp E                  &kp I        &kp O               &none
-                &none      &bm LSHFT Z      &kp X      &kp C          &kp V          &kp B          &kp K                 &kp M                  &kp COMMA              &kp DOT      &bm RSHFT FSLH      &none
-                                                       &kp LALT       &kp LCTRL      &kp SPACE      &lt WIN_CODE TAB      &lt WIN_NUM ENTER      &td_multi_windows      
-            >;
-        };
-
-        windows_code_layer {
-            bindings = <
-                &none      &kp UNDER           &kp MINUS     &kp PLUS       &kp EQUAL      &kp COLON      &kp GRAVE      &kp C_PREV        &kp C_PP               &kp C_NEXT        &kp DEL             &none
-                &none      &kp LBRC            &kp LPAR      &kp RPAR       &kp RBRC       &kp PIPE       &kp ESC        &kp LEFT          &kp UP                 &kp DOWN          &kp RIGHT           &none
-                &none      &cm LSHFT LBKT      &kp APOS      &kp DQT        &kp RBKT       &kp SEMI       &kp TILDE      &kp C_VOL_DN      &kp C_MUTE             &kp C_VOL_UP      &cm RSHFT BSLH      &none
-                                                             &kp LALT       &kp LCTRL      &kp SPACE      &none          &none             &td_multi_windows      
-            >;
-        };
-
-        windows_number_layer {
-            bindings = < 
-                &none      &kp EXCL       &kp AT      &kp HASH       &kp DLLR       &kp PRCNT        &kp CARET      &kp AMPS      &kp ASTERISK           &kp CAPS      &kp BSPC       &none  
-                &none      &kp N1         &kp N2      &kp N3         &kp N4         &kp N5           &kp N6         &kp N7        &kp N8                 &kp N9        &kp N0         &none
-                &none      &kp LSHFT      &none       &none          &none          &mo WIN_FUNC     &none          &none         &kp COMMA              &kp DOT       &kp RSHFT      &none
-                                                      &kp LALT       &kp LCTRL      &kp SPACE        &none          &none         &td_multi_windows      
-            >;
-        };
-
-        windows_function_layer {
-            bindings =<
-                &none      &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3      &none      &none       &none                  &none       &to MAC      &none
-                &none      &kp F1          &kp F2            &kp F3            &kp F4            &kp F5            &kp 6      &kp F7      &kp F8                 &kp F9      &kp F10      &none
-                &none      &kp F11         &none             &none             &bootloader       &none             &none      &none       &none                  &none       &kp F12      &none
-                                                             &kp LALT          &kp LCTRL         &kp SPACE         &none      &none       &td_multi_windows      
             >;
         };
     };
